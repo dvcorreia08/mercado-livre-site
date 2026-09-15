@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Livre | Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1>Mercado Livre</h1>
+            <p>Fale com a gente</p>
+
+            <nav aria-label="Navegação principal" class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="catalog-header contact-hero" aria-labelledby="titulo-contato">
+            <h2 id="titulo-contato">Entre em contato</h2>
+            <p>Estamos aqui para ajudar com qualquer dúvida sobre produtos, pedidos ou atendimento.</p>
+        </section>
+
+        <div class="contact-layout">
+            <section class="category-card contact-card" aria-labelledby="dados-contato">
+                <h3 id="dados-contato">Dados de contato</h3>
+                <address class="address-box">
+                    <p>
+                        Email: <a href="mailto:atendimento@mercadolivre.com.br">atendimento@mercadolivre.com.br</a><br>
+                        Telefone: (11) 8888-8888<br>
+                        Endereço: Av. das Nações Unidas, 12901 - São Paulo/SP<br>
+                        CEP: 10101-010
+                    </p>
+                </address>
+
+                <div class="social-box">
+                    <h4>Siga nossas redes sociais</h4>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Facebook</li>
+                        <li>TikTok</li>
+                        <li>X</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="category-card form-card" aria-labelledby="formulario-contato">
+                <h3 id="formulario-contato">Fale conosco</h3>
+
+                <form class="contact-form" id="contactForm">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Seu nome">
+
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="seu@email.com">
+
+                    <label for="assunto">Assunto</label>
+                    <input id="assunto" type="text" name="assunto" placeholder="Qual o motivo do contato?">
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..."></textarea>
+
+                    <button type="submit">Enviar mensagem</button>
+                    <p id="formStatus" class="form-status" aria-live="polite"></p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            if (!nome || !email) {
+                formStatus.textContent = 'Preencha seu nome e e-mail antes de enviar.';
+                formStatus.classList.add('error');
+                formStatus.classList.remove('success');
+                return;
+            }
+
+            formStatus.textContent = `Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`;
+            formStatus.classList.add('success');
+            formStatus.classList.remove('error');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
