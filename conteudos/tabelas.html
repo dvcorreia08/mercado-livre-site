@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+</head>
+<body>
+    <h1>Tabelas</h1>
+    <!--
+    table : tabela
+    tr : Ttable row (linha de tabela)
+    td : table data (dado da tabela ) * table cell (celulas da tabela)
+    th : table header (cabeçalho da tabela)
+
+    ** Nunca utilizar o border, pois ja temos o CSS fazendo essa função, utilizar somente para estudos **
+    -->
+    <table border = "1">
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>2</td>
+            <td>R$ 6.500,00</td>
+        </tr>
+        <tr>
+            <td>Celular</td>
+            <td>1</td>
+            <td>R$ 3.199,99</td>
+        </tr>
+
+        <!--
+        colspan : extensão da coluna
+        rowspan : extensão da linha
+        -->
+
+        <tr>
+            <td rowspan="2">Desconto</td>
+            <td colspan ="2"> Cupom 1 - R$ 20,00</td> 
+            <!-- Puxa o contúdo para centralizar ja o td puxa para a lado-->
+        </tr>
+        <tr>
+            <td colspan ="2"> Cupom 2 - R$ 20,00</td> 
+        </tr>
+        <tr>
+            <td>Total</td>
+            <th colspan = "2">R$ 9.679,99</th> 
+        </tr>
+    </table>
+</body>
+</html>
